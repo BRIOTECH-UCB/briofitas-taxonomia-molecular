@@ -1,0 +1,18 @@
+# Pares de primers usados pelo montar_todos.py, gerar_mapa_planilha.py e gerar_mapa_corrida.py.
+# Para incluir um par novo, acrescente uma linha (colunas separadas por TAB; "-" = vazio).
+#   par          nome do par como aparece na planilha (e no nome do consenso: AMOSTRA_par.fasta)
+#   primer_F     nome do primer direto, igual ao nome do .ab1 (AMOSTRA_primerF.ab1)
+#   primer_R     nome do primer reverso, igual ao nome do .ab1
+#   marcador     ITS, trnLF, rpl16 ... (pasta Consensos/<marcador>/ e banco de BLAST)
+#   papel        completo = cobre a região toda (o 1o que der certo vira o consenso final, na ordem do arquivo)
+#                metade1 / metade2 = metades do ITS, juntadas pelo juntar_metades.py
+#   opcoes       opções do montar_par.py (--mott 0.05, --trnlf); "-" = nenhuma
+#   seq_F, seq_R sequência 5'->3' do primer; se preenchida, o sítio do primer é cortado das pontas do consenso
+#   outros_nomes outros nomes do mesmo par na planilha, separados por vírgula (ex.: CM-FM)
+# par	primer_F	primer_R	marcador	papel	opcoes	seq_F	seq_R	outros_nomes
+ITS1-ITS4	ITS1	ITS4	ITS	completo	--mott 0.05	-	-	-
+18F-25R	18F	25R	ITS	completo	--mott 0.05	-	-	-
+ITS1F-5.8R	ITS1F	5.8R	ITS	metade1	--mott 0.05	-	-	-
+5.8F-ITS2R	5.8F	ITS2R	ITS	metade2	--mott 0.05	-	-	-
+FM-CM	CM	FM	trnLF	completo	--trnlf	-	-	CM-FM
+rpl16Fb-rpl16R	rpl16Fb	rpl16R	rpl16	completo	-	-	-	-
